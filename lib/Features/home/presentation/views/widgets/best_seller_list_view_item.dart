@@ -45,7 +45,18 @@ class BestSellerListViewItem extends StatelessWidget {
                   'J.K Rowling',
                   style: Styles.titleMeduim14,
                 ),
-                const BookRating(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '19.99€',
+                      style: Styles.titleMeduim20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const BookRating(),
+                  ],
+                ),
               ],
             ),
           ),

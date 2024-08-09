@@ -19,6 +19,7 @@ abstract class Styles{
 
   );static const titleMeduim16 = TextStyle(
     fontSize: 16.0,
+    height: 1,
     fontWeight: FontWeight.w500,
 
   );static const titleMeduim14 = TextStyle(

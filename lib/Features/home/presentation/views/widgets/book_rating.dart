@@ -9,16 +9,12 @@ class BookRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return  Padding(
       padding: const EdgeInsetsDirectional.only(end: 16.0),
-        child: Row(
+        child: SizedBox(
+          width: 125.0,
+            child: Row(
       children: [
-         Text(
-          '19.99€',
-          style: Styles.titleMeduim20.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         const Spacer(),
         const Icon(FontAwesomeIcons.solidStar, color: Colors.yellow,),
         const SizedBox(width: 6.3,),
@@ -27,11 +23,13 @@ class BookRating extends StatelessWidget {
           style: Styles.titleMeduim16,
         ),
         const SizedBox(width: 5,),
-        const Text(
+        Text(
           '(245)',
-          style: Styles.titleMeduim14,
+          style: Styles.titleMeduim14.copyWith(
+            fontWeight: FontWeight.bold
+          ),
         ),
       ],
-    ));
+    )));
   }
 }
