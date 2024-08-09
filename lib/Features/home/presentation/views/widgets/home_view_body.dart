@@ -1,5 +1,5 @@
 import 'package:bookly_app_v1/Features/home/presentation/views/widgets/custom_appBar.dart';
-import 'package:bookly_app_v1/Features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:bookly_app_v1/Features/home/presentation/views/widgets/custom_list_view.dart';
 import 'package:bookly_app_v1/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
                 CustomAppBar(),
                 Padding(
                   padding: EdgeInsetsDirectional.only(start: 10.0),
-                    child:CustomListViewItem()),
+                    child:CustomListView()),
                 SizedBox(
                   height: 30.0,
                 ),
