@@ -9,7 +9,7 @@ abstract class HomeRepoImplement implements HomeRepo{
   ApiServices apiServices;
   HomeRepoImplement(this.apiServices);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async{
+  Future<Either<Failure, List<BookModel>>> fetchFeatureNewestBooks() async{
     try {
       var data = await apiServices.get(endPoint: 'volumes?q=subject:programming');
       List<BookModel> books = [];
@@ -26,7 +26,7 @@ abstract class HomeRepoImplement implements HomeRepo{
     }
   }
   @override
-  Future<dynamic> fetcthBestSellerBooks() async{
+  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async{
     try {
       var data = await apiServices.get(endPoint: 'volumes?q=subject:programming');
       List<BookModel> books = [];
