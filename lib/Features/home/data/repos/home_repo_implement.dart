@@ -4,8 +4,7 @@ import 'package:dio/dio.dart';
 import '../../../../core/errors/failure.dart';
 import '../models/book_model.dart';
 import 'package:dartz/dartz.dart';
-
-abstract class HomeRepoImplement implements HomeRepo{
+class HomeRepoImplement implements HomeRepo{
   ApiServices apiServices;
   HomeRepoImplement(this.apiServices);
   @override

@@ -1,12 +1,12 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/book_model.dart';
 import '../../../data/repos/home_repo_implement.dart';
 
 part 'feature_newest_books_state.dart';
 
-class FeatureNewestBooksCubit extends Cubit<FeatureBooksState> {
-  FeatureNewestBooksCubit(this.homeRepoImplement)
+class FeatureBooksCubit extends Cubit<FeatureBooksState> {
+  FeatureBooksCubit(this.homeRepoImplement)
       : super(FeatureBooksInitial());
   final HomeRepoImplement homeRepoImplement;
   Future<void> featureNewestBooks() async {

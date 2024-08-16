@@ -18,7 +18,7 @@ class CustomBookDetailsSection extends StatelessWidget {
           padding: EdgeInsetsDirectional.symmetric(
               horizontal: width * 0.3, vertical: 16.0),
           child: const CustomBookImage(
-            aspectRatio: 2.5 / 3.9,
+            aspectRatio: 2.5 / 3.9, image: 'https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg',
           ),
         ),
         const SizedBox(

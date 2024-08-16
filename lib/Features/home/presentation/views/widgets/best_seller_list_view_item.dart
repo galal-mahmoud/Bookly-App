@@ -23,7 +23,7 @@ class BestSellerListViewItem extends StatelessWidget {
         children: [
           const CustomBookImage(
             aspectRatio: 2.3 / 4,
-            borderRaduis: 8.0,
+            borderRaduis: 8.0, image: 'https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg',
           ),
           const SizedBox(
             width: 30.0,

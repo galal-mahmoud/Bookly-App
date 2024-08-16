@@ -33,7 +33,7 @@ class SimilerBooksListViewSection extends StatelessWidget {
             itemBuilder: (context, index) {
               return const Padding(
                 padding: EdgeInsetsDirectional.symmetric(horizontal: 5.0),
-                child: CustomBookImage(aspectRatio: 2.5/4,),
+                child: CustomBookImage(aspectRatio: 2.5/4, image: 'https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg',),
               );
             },
           ),

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/assets_data.dart';
-
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
-    super.key, required this.aspectRatio, this.borderRaduis = 16.0,
+    super.key, required this.aspectRatio, this.borderRaduis = 16.0, this.image,
   });
   final double aspectRatio;
   final double borderRaduis;
+  final String? image;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -15,9 +14,9 @@ class CustomBookImage extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRaduis),
-          image: const DecorationImage(
+          image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(AssetsData.kTestImage),
+            image: NetworkImage(image ?? 'https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg'),
           ),
         ),
       ),);

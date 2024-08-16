@@ -1,4 +1,4 @@
-part of 'feature_newest_books_cubit.dart';
+part of 'feature_books_cubit.dart';
 
 @immutable
 sealed class FeatureBooksState {}
@@ -10,6 +10,6 @@ final class FeatureBooksSuccess extends FeatureBooksState {
   FeatureBooksSuccess(this.books);
 }
 final class FeatureBooksFailure extends FeatureBooksState {
-  final errorMessage;
+  final String errorMessage;
   FeatureBooksFailure(this.errorMessage);
 }
