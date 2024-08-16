@@ -15,7 +15,8 @@ class SearchViewBody extends StatelessWidget {
         ),
 
         SliverFillRemaining(
-          child: BestSellerListView(),
+          child: BestSellerListView(
+          ),
         ),
         SliverToBoxAdapter(
           child: SizedBox(

@@ -10,6 +10,24 @@ class HomeRepoImplement implements HomeRepo{
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeatureNewestBooks() async{
     try {
+      var data = await apiServices.get(endPoint: 'volumes?Sorting=newest&q=subject:Chemistry');
+      List<BookModel> books = [];
+      for(var item in data['items']){
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } on Exception catch (e) {
+      if(e is DioException){
+        return left(ServerFailure.fromDioException(e));
+      }else{
+        return left(ServerFailure(errorMessage: e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async{
+    try {
       var data = await apiServices.get(endPoint: 'volumes?q=subject:programming');
       List<BookModel> books = [];
       for(var item in data['items']){
@@ -24,10 +42,11 @@ class HomeRepoImplement implements HomeRepo{
       }
     }
   }
+
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async{
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooksSeller({required String categories}) async{
     try {
-      var data = await apiServices.get(endPoint: 'volumes?q=subject:programming');
+      var data = await apiServices.get(endPoint: 'volumes?Sorting=relevance&q=subject:programming');
       List<BookModel> books = [];
       for(var item in data['items']){
         books.add(BookModel.fromJson(item));

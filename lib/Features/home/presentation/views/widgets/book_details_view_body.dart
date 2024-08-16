@@ -5,8 +5,6 @@ import 'custom_book_details_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
-
-
   @override
   Widget build(BuildContext context) {
     return const CustomScrollView(

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/styles.dart';
-import 'book_rating.dart';
 import 'custom_book_details_appBar.dart';
 import 'custom_book_image.dart';
 
 class CustomBookDetailsSection extends StatelessWidget {
-  const CustomBookDetailsSection({super.key});
-
+  const CustomBookDetailsSection({super.key, });
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -17,9 +14,7 @@ class CustomBookDetailsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsetsDirectional.symmetric(
               horizontal: width * 0.3, vertical: 16.0),
-          child: const CustomBookImage(
-            aspectRatio: 2.5 / 3.9, image: 'https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg',
-          ),
+          child: const CustomBookImage(),
         ),
         const SizedBox(
           height: 10.0,
@@ -39,7 +34,7 @@ class CustomBookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 24.0,
         ),
-        const BookRating(),
+         //BookRating(),
       ],
     );
   }
