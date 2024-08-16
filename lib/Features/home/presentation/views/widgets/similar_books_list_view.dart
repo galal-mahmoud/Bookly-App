@@ -7,21 +7,10 @@ import '../../manager/similer_books/similar_books_cubit.dart';
 import 'custom_book_image.dart';
 
 
-class SimilarBooksListView extends StatefulWidget {
+class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({
     super.key,
   });
-
-  @override
-  State<SimilarBooksListView> createState() => _SimilarBooksListViewState();
-}
-
-class _SimilarBooksListViewState extends State<SimilarBooksListView> {
-  @override
-  void initState() {
-    BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(categories: 'Programming');
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
@@ -34,10 +23,13 @@ class _SimilarBooksListViewState extends State<SimilarBooksListView> {
                 .height * 0.17,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsetsDirectional.symmetric(horizontal: 5.0),
-                  child: CustomBookImage(),
+                return Padding(
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 5.0),
+                  child: CustomBookImage(
+                    image: state.books[index].volumeInfo?.imageLinks?.thumbnail ?? '',
+                  ),
                 );
               },
             ),
